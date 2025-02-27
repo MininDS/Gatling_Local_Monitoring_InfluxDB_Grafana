@@ -11,8 +11,8 @@ import static io.gatling.javaapi.http.HttpDsl.*;
 
 
 
-//Created public class named "MyComputerSimulation" with load testing Simulation design - variables, methods, etc
-public class MyComputerSimulation extends Simulation {
+//Created public class named "MyComputerSimulationForMonitoring" with load testing Simulation design - variables, methods, etc
+public class MyComputerSimulationForMonitoring extends Simulation {
 
 
     //Created private class named "HttpProtocolBuilder" with field "httpProtocol" and value "http", some methods
@@ -72,11 +72,11 @@ public class MyComputerSimulation extends Simulation {
 
     //Created class-ScenarioBuilder with field "users" includes scenario-variable named "Users" for typical user's actions in the system
     private ScenarioBuilder users = scenario ("Users")
-            //Scenario "Users" executes typical actions "searchForComputer", "browse" which were announced above
+            //Scenario "Users" executes typical action "searchForComputer" which was announced above
             .exec(searchForComputer);
 
 
-    //Started MyComputerSimulation load testing with needed loading model:
+    //Started MyComputerSimulationForMonitoring load testing with needed loading model:
         //***Basic setUp for script-debugging - Open model with 1 admin and 1 user, parallel executing of scenarios
         {
             setUp(

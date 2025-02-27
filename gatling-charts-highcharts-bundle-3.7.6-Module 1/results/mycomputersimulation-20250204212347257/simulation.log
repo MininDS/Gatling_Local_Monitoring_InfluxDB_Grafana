@@ -1,4 +1,4 @@
-RUN	computerdatabaseformonitoring.MyComputerSimulation	mycomputersimulation	1738704227257	test 05-02-2025	3.7.6
+RUN	computerdatabaseformonitoring.MyComputerSimulationForMonitoring	mycomputersimulation	1738704227257	test 05-02-2025	3.7.6
 USER	Admins	START	1738704228562
 REQUEST		LoadHomePage	1738704228621	1738704229079	OK	 
 REQUEST		SearchComputers_MacBook	1738704231322	1738704231465	OK	 
