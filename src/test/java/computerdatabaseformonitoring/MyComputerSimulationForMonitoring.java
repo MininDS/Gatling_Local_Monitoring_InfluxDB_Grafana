@@ -46,7 +46,7 @@ public class MyComputerSimulationForMonitoring extends Simulation {
                 .pause(2)
 
             //Step 2 - Search computer by "searchCriterion" from searchFeeder-csv-file
-            .exec(http("Method GET /computers?f=#{searchCriterion} - Filter computer by manufacturer")
+            .exec(http("Method GET /computers?f={computerManufacturerName} - Filter computer by manufacturer")
                 .get("/computers?f=#{searchCriterion}")
 
                 //Check that http status-code is 200 in response
@@ -60,7 +60,7 @@ public class MyComputerSimulationForMonitoring extends Simulation {
                 .pause(2)
 
             //Step 3 - Open needed computer named from searchFeeder-csv-file (value of searchComputerName) with URL (computerURL) from step 2
-            .exec(http("Method GET #{computerURL} - Load founded computer #{searchComputerName} details by its ID")
+            .exec(http("Method GET /computers/{ID} - Load founded computer details by its ID")
                 .get("#{computerURL}")
 
                 //Check that http status-code is 200 in response
@@ -71,7 +71,7 @@ public class MyComputerSimulationForMonitoring extends Simulation {
 
 
     //Created class-ScenarioBuilder with field "users" includes scenario-variable named "Users" for typical user's actions in the system
-    private ScenarioBuilder users = scenario ("Users")
+    private ScenarioBuilder users = scenario ("Users search")
             //Scenario "Users" executes typical action "searchForComputer" which was announced above
             .exec(searchForComputer);
 
