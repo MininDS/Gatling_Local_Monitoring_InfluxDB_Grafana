@@ -81,7 +81,7 @@ public class MyComputerSimulationForMonitoring extends Simulation {
         {
             setUp(
                 //*Executes users-scenarios parallel with only 1 user injected in the system (OpenModel)
-                users.injectOpen(atOnceUsers(1))
+                users.injectOpen(constantUsersPerSec(10).during(10))
             )
             //*Use http-protocol during simulation
             .protocols(httpProtocol);
