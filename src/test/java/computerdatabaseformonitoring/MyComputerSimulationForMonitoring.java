@@ -40,11 +40,34 @@ public class MyComputerSimulationForMonitoring extends Simulation {
 
     //Started MyComputerSimulationForMonitoring load testing with needed loading model:
         {
-            setUp(
+            //setUp(
                 //*Open model with usersSearch - use 10 scenarios per sec during 15 second
-                usersSearch.injectOpen(constantUsersPerSec(10).during(15))
-            )
+                //usersSearch.injectOpen(constantUsersPerSec(10).during(15))
+            //)
             //*Use http-protocol during simulation
-            .protocols(httpProtocol);
+            //.protocols(httpProtocol);
+
+            setUp(
+                    usersSearch.injectOpen(rampUsers(10).during(1),
+                    nothingFor(1),
+                    rampUsers(20).during(1),
+                            nothingFor(1),
+                            rampUsers(30).during(1),
+                            nothingFor(1),
+                            rampUsers(40).during(1),
+                            nothingFor(1)
+            ).protocols(httpProtocol));
+
+            //setUp(
+                    //usersSearch.injectOpen(
+                            //rampUsersPerSec(1).to(3).during(1),
+                            //nothingFor(1),
+                            //rampUsersPerSec(3).to(9).during(1),
+                            //nothingFor(1),
+                            //rampUsersPerSec(9).to(27).during(1),
+                            //nothingFor(1),
+                            //rampUsersPerSec(27).to(81).during(1)
+                    //).protocols(httpProtocol));
         }
 }
+
