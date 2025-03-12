@@ -55,7 +55,10 @@ public class MyComputerSimulationForMonitoring extends Simulation {
                             rampUsers(30).during(1),
                             nothingFor(1),
                             rampUsers(40).during(1),
-                            nothingFor(1)
+                            nothingFor(1),
+                            rampUsers(50).during(1),
+                            nothingFor(1),
+                            rampUsers(60).during(1)
             ).protocols(httpProtocol));
 
             //setUp(
