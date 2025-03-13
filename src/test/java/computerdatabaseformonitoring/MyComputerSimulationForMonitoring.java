@@ -71,6 +71,24 @@ public class MyComputerSimulationForMonitoring extends Simulation {
                             //nothingFor(1),
                             //rampUsersPerSec(27).to(81).during(1)
                     //).protocols(httpProtocol));
+
+            //setUp(
+                    //usersSearch.injectOpen(
+                            // first ramp the arrival rate to 100 users/s in 1 minute
+                            //rampUsersPerSec(0).to(1).during(1),
+                            //nothingFor(1),
+                            // then keep a steady rate of 100 users/s during 10 minutes
+                            //constantUsersPerSec(1).during(1),
+                            //nothingFor(1),
+                            //rampUsersPerSec(2).to(4).during(1),
+                            //nothingFor(1),
+                            //constantUsersPerSec(4).during(1),
+                            //nothingFor(1),
+                            //rampUsersPerSec(4).to(8).during(1),
+                            //nothingFor(1),
+                            //constantUsersPerSec(8).during(1)
+                    //).protocols(httpProtocol)
+            //);
         }
 }
 
