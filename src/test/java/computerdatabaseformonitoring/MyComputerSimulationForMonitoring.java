@@ -50,7 +50,9 @@ public class MyComputerSimulationForMonitoring extends Simulation {
             setUp(
                     usersSearch.injectOpen(rampUsers(10).during(1),
                     nothingFor(1),
-                    rampUsers(20).during(1),
+                    rampUsers(10).during(1),
+                            nothingFor(1),
+                            rampUsers(20).during(1),
                             nothingFor(1),
                             rampUsers(30).during(1),
                             nothingFor(1),
@@ -58,7 +60,10 @@ public class MyComputerSimulationForMonitoring extends Simulation {
                             nothingFor(1),
                             rampUsers(50).during(1),
                             nothingFor(1),
-                            rampUsers(60).during(1)
+                            rampUsers(60).during(1),
+                            nothingFor(1),
+                            rampUsers(70).during(1)
+
             ).protocols(httpProtocol));
 
             //setUp(
@@ -74,10 +79,8 @@ public class MyComputerSimulationForMonitoring extends Simulation {
 
             //setUp(
                     //usersSearch.injectOpen(
-                            // first ramp the arrival rate to 100 users/s in 1 minute
                             //rampUsersPerSec(0).to(1).during(1),
                             //nothingFor(1),
-                            // then keep a steady rate of 100 users/s during 10 minutes
                             //constantUsersPerSec(1).during(1),
                             //nothingFor(1),
                             //rampUsersPerSec(2).to(4).during(1),
