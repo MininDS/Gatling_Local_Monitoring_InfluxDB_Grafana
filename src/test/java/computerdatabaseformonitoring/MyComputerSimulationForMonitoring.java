@@ -48,9 +48,8 @@ public class MyComputerSimulationForMonitoring extends Simulation {
             //.protocols(httpProtocol);
 
             setUp(
-                    usersSearch.injectOpen(rampUsers(10).during(1),
-                    nothingFor(1),
-                    rampUsers(10).during(1),
+                    usersSearch.injectOpen(
+                            rampUsers(10).during(1),
                             nothingFor(1),
                             rampUsers(20).during(1),
                             nothingFor(1),
@@ -62,7 +61,8 @@ public class MyComputerSimulationForMonitoring extends Simulation {
                             nothingFor(1),
                             rampUsers(60).during(1),
                             nothingFor(1),
-                            rampUsers(70).during(1)
+                            rampUsers(70).during(1),
+                            nothingFor(1)
 
             ).protocols(httpProtocol));
 
